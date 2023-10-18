@@ -1,7 +1,7 @@
 <template>
   <footer id="footer" @click.stop>
     <div v-if="hitokotoShow" class="hitokoto">
-      {{hitokotoData}}
+      {{ hitokotoData }}
     </div>
     <div class="copyright">
       <span class="site-name">{{ siteName }}</span>
@@ -81,7 +81,7 @@ const jumpTo = (url) => {
 const getHitokotoData = () => {
   getHitokoto()
     .then((res) => {
-      hitokotoData.value = res.hitokoto;
+      hitokotoData.value = "[ " + res.hitokoto.substr(0, res.hitokoto.length - 1) + " ]";
       hitokotoShow.value = true;
     })
     .catch((error) => {
