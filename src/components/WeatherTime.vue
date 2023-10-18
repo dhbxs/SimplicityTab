@@ -94,7 +94,6 @@ const getWeatherData = () => {
   if (timeDifference >= 2 * 60 * 1000) {
     getWeather()
       .then((res) => {
-        console.log(res);
         weatherData.value = res.result.condition;
         lastWeatherData = {
           data: res.result.condition,
