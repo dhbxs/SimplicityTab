@@ -409,7 +409,7 @@ const backupSite = () => {
   try {
     const date = new Date();
     const dateString = date.toISOString().replace(/[:.]/g, "-");
-    const fileName = `Snavigation_Backup_${dateString}.json`;
+    const fileName = `SimplicityTab_Backup_${dateString}.json`;
     const jsonData = JSON.stringify(set.$state);
     const blob = new Blob([jsonData], { type: "application/json" });
     const url = URL.createObjectURL(blob);
