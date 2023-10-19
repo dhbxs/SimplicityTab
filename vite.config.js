@@ -33,8 +33,8 @@ export default defineConfig({
         ],
       },
       manifest: {
-        name: "Snavigation",
-        short_name: "Snavigation",
+        name: "灯火不休时|Tab",
+        short_name: "灯火不休时|Tab",
         description: "一个极致简约的导航页",
         display: "standalone",
         start_url: "/",
