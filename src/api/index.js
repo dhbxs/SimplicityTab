@@ -42,6 +42,6 @@ export const getSearchSuggestions = async (keyWord) => {
 export const getHitokoto = () => {
   return axios({
     method: "GET",
-    url: "https://v1.hitokoto.cn/?max_length=19",
+    url: "https://international.v1.hitokoto.cn?c=d&max_length=19",
   });
 };
