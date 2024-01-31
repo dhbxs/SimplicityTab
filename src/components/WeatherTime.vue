@@ -48,11 +48,11 @@
     </div>
     <div v-if="weatherShow && set.showWeather" class="weather">
       <span>{{ cityName ?? "N/A" }}&nbsp;</span>
-      <span class="status">{{ weatherData.condition ?? "N/A" }}</span>
-      <span class="temperature">{{ weatherData.temp ?? "N/A" }} ℃</span>
-      <span class="wind">{{ weatherData.windDir ?? "N/A" }}</span>
-      <span v-if="weatherData.windLevel" class="wind-level">
-        {{ weatherData.windLevel }} 级
+      <span class="status">{{ weatherData.day_weather_short ?? "N/A" }}</span>
+      <span class="temperature">{{ weatherData.min_degree ?? "N/A" }} ~ {{ weatherData.max_degree ?? "N/A" }} ℃</span>
+      <span class="wind">{{ weatherData.day_wind_direction ?? "N/A" }}</span>
+      <span v-if="weatherData.day_wind_power" class="wind-level">
+        {{ weatherData.day_wind_power }} 级
       </span>
     </div>
   </div>
@@ -98,9 +98,9 @@ const getWeatherData = () => {
       .then((res) => {
         console.log(res);
         weatherData.value = res.result.condition;
-        cityName.value = res.result.city.city_name;
+        cityName.value = res.result.city.City;
         lastWeatherData = {
-          cityName: res.result.city.city_name,
+          cityName: res.result.city.City,
           data: res.result.condition,
           lastFetchTime: currentTime,
         };
